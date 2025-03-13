@@ -14,10 +14,12 @@ export const CartesianCombinations: React.FunctionComponent<CartesianCOmbination
 				const variantValues = indices.map((index, typeIndex) => type[typeIndex]?.options[index - 1]?.value);
 				const title = type?.length > 1 ? variantValues.join("-") : variantValues.join("");
 				return (
-					<div key={index}>
-						<div>{title}</div>
-						<input />
-						<button>Delete</button>
+					<div className="combination-container">
+						<div key={index}>
+							<div>{title}</div>
+							<input placeholder={title} />
+							<button>Delete</button>
+						</div>
 					</div>
 				);
 			})}
