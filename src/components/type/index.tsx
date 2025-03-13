@@ -3,6 +3,8 @@ import { combination, variantType } from "../../data/data";
 import { cartesianProduct } from "../../utils/utils.fns";
 import { CombinationModel, VariantModel } from "../../model/model";
 import { CartesianCombinations } from "../combinations";
+import "./type.css";
+import { DELETE_ICON } from "../../assets/icons/delete-icon";
 
 export const CombinationType: React.FunctionComponent = () => {
 	const [type, setType] = useState<VariantModel>(variantType);
@@ -61,8 +63,17 @@ export const CombinationType: React.FunctionComponent = () => {
 						>
 							Delete
 						</button>
-						<div>
-							<div>Options</div>
+						<div>Options</div>
+						<button
+							onClick={() => {
+								const updatedType = [...type];
+								updatedType[type_index].options.push({ value: "" });
+								setType(updatedType);
+							}}
+						>
+							Add
+						</button>
+						<div className="option_container">
 							{item.options.map((option, opt_index) => (
 								<>
 									<input
@@ -73,15 +84,6 @@ export const CombinationType: React.FunctionComponent = () => {
 										key={opt_index}
 										type="text"
 									/>
-									<button
-										onClick={() => {
-											const updatedType = [...type];
-											updatedType[type_index].options.push({ value: "" });
-											setType(updatedType);
-										}}
-									>
-										Add
-									</button>
 									<button
 										onClick={() => {
 											const updatedTypes = [...type];
@@ -103,7 +105,10 @@ export const CombinationType: React.FunctionComponent = () => {
 					</div>
 				))}
 			</div>
-			<CartesianCombinations combinations={combinations} type={type} />
+			<div>Combinations</div>
+			<div className="combination_container">
+				<CartesianCombinations combinations={combinations} type={type} />
+			</div>
 		</>
 	);
 };
