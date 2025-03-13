@@ -4,7 +4,6 @@ import { cartesianProduct } from "../../utils/utils.fns";
 import { CombinationModel, VariantModel } from "../../model/model";
 import { CartesianCombinations } from "../combinations";
 import "./type.css";
-import { DELETE_ICON } from "../../assets/icons/delete-icon";
 
 export const CombinationType: React.FunctionComponent = () => {
 	const [type, setType] = useState<VariantModel>(variantType);
