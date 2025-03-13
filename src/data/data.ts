@@ -1,16 +1,16 @@
 export const variantType = [
-    {
-        options: [
-            {
-                value: "",
-            },
-        ],
-    },
-]
+	{
+		options: [
+			{
+				value: "",
+			},
+		],
+	},
+];
 
 export const combination = [
-    {
-        value: "",
-        combinationKey: ""
-    }
-]
+	{
+		value: "",
+		combinationKey: "",
+	},
+];

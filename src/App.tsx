@@ -1,13 +1,13 @@
-import { CombinationType } from './components/type';
+import { CombinationType } from "./components/type";
 
 function App() {
-  return (
-    <>
-      <div className="content">
-        <CombinationType />
-      </div>
-    </>
-  );
+	return (
+		<>
+			<div className="content">
+				<CombinationType />
+			</div>
+		</>
+	);
 }
 
 export default App;
