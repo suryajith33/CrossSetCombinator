@@ -1,9 +1,8 @@
 export type VariantModel = {
-    options: 
-        {value:string}[]
-}[]
+	options: { value: string }[];
+}[];
 
 export type CombinationModel = {
-    value: string,
-    combinationKey: string
-}[]
+	value: string;
+	combinationKey: string;
+}[];
